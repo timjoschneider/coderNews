@@ -73,6 +73,12 @@ a {
   color: black;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #ff6600;
+  transition-delay: 0.2s;
+}
+
 a.title {
   font-family: 'Anton', sans-serif;
   font-size: 1.5rem;
