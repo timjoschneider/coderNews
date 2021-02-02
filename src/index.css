@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#nav {
+  display: inline-flex;
+  background-color: #1f1f24;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+}
+
+#logo {
+  width: 200px;
+}
+
+#search {
+  display: flex;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    color: white;
+    
+}
+
+#search placeholder {
+  color: white;
+}
+
+#search-bar {
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #ff6600;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+}
+
+#search-btn {
+  color: white;
+  background: #ff6600;
+  height: 40px;
+  margin: -1.9rem;
+  border: 1px solid #ff6600;
+  border-radius: 0 5px 5px 0;
+  font-family: 'Jost', sans-serif;
+}
+
+#login-btn {
+  color: white;
+  font-family: 'Jost', sans-serif;
+  border:2px solid #ff6600;
+  background-color: #ff6600;
+  border-radius: 10px;
+  width: fit-content;
+  height:fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a.title {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+}
+
+span.card-span {
+  font-family: 'Jost', sans-serif;
+}
