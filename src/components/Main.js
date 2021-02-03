@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MyCard from './MyCard';
+import SearchBar from './SearchBar';
 import {hits} from '../data/dummy.json';
 import ReactPaginate from 'react-paginate';
 import '../css/pagination.css';
@@ -40,8 +41,8 @@ const Main = () => {
                 {currentPageData}
                 <div className="col-5 ">
                     <ReactPaginate
-                        previousLabel={"← Previous"}
-                        nextLabel={"Next →"}
+                        previousLabel={<i className="fas fa-chevron-circle-left"></i>}
+                        nextLabel={<i className="fas fa-chevron-circle-right"></i>}
                         pageCount={pageCount}
                         onPageChange={handlePageClick}
                         containerClassName={"pagination"}

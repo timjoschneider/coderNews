@@ -10,7 +10,20 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ff6600;
-    color: #ff6600;
+    font-family: 'Jost', sans-serif;
+}
+.pagination a:focus {
+    outline: none;
+}
+
+.pagination a:first-child,
+.pagination a:last-child {
+    border-style: none;
+}
+
+.pagination .fas {
+    color:#ff6600;
+    font-size: 1.75rem;
 }
 
 .pagination__link {
@@ -20,6 +33,10 @@
 .pagination__link--active a {
     color: #fff;
     background: #ff6600;
+}
+
+.pagination__link--active {
+    color: white;
 }
 
 .pagination__link--disabled a {
