@@ -1,60 +1,57 @@
 import React, { useState, useEffect } from 'react';
 import MyCard from './MyCard';
-import dummy from '../data/dummy.json';
-//import SearchBar from './SearchBar';
+import {hits} from '../data/dummy.json';
+import ReactPaginate from 'react-paginate';
+import '../css/pagination.css';
 
 
 const Main = () => {
 
-    const [data, setData ] = useState({});
-    // console.log(data);
-    // https://www.codecademy.com/courses/react-101/lessons/the-effect-hook/exercises/fetch-data
-
-    const fetchJSONData = () =>{
-        fetch('dummy.json', 
-        {
-            headers : { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-        .then((response) => {
-            // console.log(response);
-            return response.json();
-          })
-          .then((myJson) => {
-            // console.log(myJson.hits);
-            setData(myJson);
-            console.log(`heree: ${data}`);
-          });
-      }
+    const [data, setData ] = useState([...hits]);
+    const [currentPage, setCurrentPage] = useState(0);
 
     useEffect(() => {
-        fetchJSONData()
-        // setData(dummy);
-        // console.log(`heree: ${data}`);
-    }, [])
+        let interval = setInterval(() => {
+            setData([...hits]);
+            console.log("interval fired");
+        }, 300000);
+        return () => clearInterval(interval);
+    }, []);
+
+
+    //  --- PAGINATION --- //
+    const PER_PAGE = 10;
+    const offset = currentPage * PER_PAGE;
     
-    const handleUserInput = (e) => {
-        // setUserInput({
-        //   ...userInput,
-        //   [e.target.name]: e.target.value
-        // });
-        console.log(e.target.value);
-      };
+    // map over entries and insert cards
+    const currentPageData = data
+        .slice(offset, offset + PER_PAGE)
+        .map((entry, i) => {return <MyCard key={i} data={entry}/>});
+
+    const pageCount = Math.ceil(data.length / PER_PAGE);
+    function handlePageClick({ selected: selectedPage }) {
+        setCurrentPage(selectedPage);
+    }
 
     return (
         <div className="container">
-            
-            <div className="row m-5">
-                {/* <SearchBar handleUserInput={handleUserInput}/> FOR EMELINE*/}
-
-                {dummy.hits.map((entry, i) => {
-                    return <MyCard key={i} data={entry}/>
-                })}
-                {/* <Card data={dummy.hits[0]}/> */}
+            <div className="row m-5 d-flex justify-content-center">
+                {/* cards */}
+                {currentPageData}
+                <div className="col-5 ">
+                    <ReactPaginate
+                        previousLabel={"← Previous"}
+                        nextLabel={"Next →"}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                        containerClassName={"pagination"}
+                        previousLinkClassName={"pagination__link"}
+                        nextLinkClassName={"pagination__link"}
+                        disabledClassName={"pagination__link--disabled"}
+                        activeClassName={"pagination__link--active"}
+                    />
+                </div>
             </div>
-            
         </div>
     );
 }
