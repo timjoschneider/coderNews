@@ -2,11 +2,11 @@ import React from 'react';
 
 const SearchBar = () => {
 
-    const [userInput, setUserInput] = useState ("");
-    const handleChange = (event) => {
-        const userSearch = event.target.value;
-            setUserInput(userSearch);
-    }
+//     const [userInput, setUserInput] = useState ("");
+//     const handleChange = (event) => {
+//         const userSearch = event.target.value;
+//             setUserInput(userSearch);
+//     }
         
     return (
         <div id="search" className="col-3">
@@ -25,7 +25,7 @@ const SearchBar = () => {
 
 export default SearchBar;
 
-// map over entries and insert cards
-// const currentPageData = data
-//         .slice(offset, offset + PER_PAGE)
-//         .map((entry, i) => {return `${i}` userInput={entry}/>});
+// // map over entries and insert cards
+// // const currentPageData = data
+// //         .slice(offset, offset + PER_PAGE)
+// //         .map((entry, i) => {return `${i}` userInput={entry}/>});
