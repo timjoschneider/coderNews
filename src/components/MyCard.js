@@ -2,7 +2,6 @@ import React from 'react';
 
 const MyCard = ({ data }) => {
 
-
     return (
         <>
             <div className="card shadow mb-3">
