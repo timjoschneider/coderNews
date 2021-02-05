@@ -30,11 +30,10 @@ const Main = ({data}) => {
         return (
             <div className="container">
                 <div className="row m-5 d-flex justify-content-center">
-                    <h2 className="center mb-3">Fetching Data ... </h2>
-                    <div className="center spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
+                    <h2 className="center mb-3">Loading ... </h2>
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only">Loading...</span>
                     </div>
-                    
                 </div>
             </div>
         )
