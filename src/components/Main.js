@@ -30,8 +30,9 @@ const Main = ({data}) => {
         return (
             <div className="container">
                 <div className="row m-5 d-flex justify-content-center">
-                    <div className="center" role="status">
-                        <span className="visually-hidden">Loading...</span>
+                    <h2 className="center mb-3">Loading ... </h2>
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -40,11 +41,9 @@ const Main = ({data}) => {
     return (
         <div className="container">
             <div className="row m-5 d-flex justify-content-center">
-    
-                {!data && <h3 className="nothing">Nothing to display</h3>}
 
                 {currentPageData}
-                <div className="col-5 ">
+                <div className="col-5 mt-5">
                     <ReactPaginate
                         previousLabel={<i className="fas fa-chevron-circle-left"></i>}
                         nextLabel={<i className="fas fa-chevron-circle-right"></i>}
