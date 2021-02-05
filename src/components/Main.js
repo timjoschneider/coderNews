@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MyCard from './MyCard';
 import ReactPaginate from 'react-paginate';
 import '../css/pagination.css';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 
 const Main = ({data}) => {
@@ -11,8 +12,7 @@ const Main = ({data}) => {
     const PER_PAGE = 10;
     const offset = currentPage * PER_PAGE;
 
-    // map over entries and insert cards (paginated)
-    const currentPageData = data && data
+    const currentPageData = data && data // map over entries and insert cards (paginated)
         .slice(offset, offset + PER_PAGE)
         .map((entry, i) => {return <MyCard key={entry.objectID} data={entry}/>});
 
@@ -25,25 +25,22 @@ const Main = ({data}) => {
         setCurrentPage(selectedPage);
     }
 
-
     if (!data) {
         return (
-            <div className="container">
-                <div className="row m-5 d-flex justify-content-center">
+            <Container>
+                <Row className="m-5 d-flex justify-content-center">
                     <h2 className="center mb-3">Loading ... </h2>
-                    <div class="spinner-grow" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div>
-            </div>
+                    <Spinner animation="grow" />
+                </Row>
+            </Container>
         )
     }
+    
     return (
-        <div className="container">
-            <div className="row m-5 d-flex justify-content-center">
-
+        <Container>
+            <Row className="m-5 d-flex justify-content-center">
                 {currentPageData}
-                <div className="col-5 mt-5">
+                <Col className="col-3 mt-5">
                     <ReactPaginate
                         previousLabel={<i className="fas fa-chevron-circle-left"></i>}
                         nextLabel={<i className="fas fa-chevron-circle-right"></i>}
@@ -55,9 +52,9 @@ const Main = ({data}) => {
                         disabledClassName={"pagination__link--disabled"}
                         activeClassName={"pagination__link--active"}
                     />
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
 
