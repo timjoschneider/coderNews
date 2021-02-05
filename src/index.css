@@ -84,29 +84,39 @@ span.card-span {
     font-family: 'Jost', sans-serif;
 }
 
+
 /* footer */
 
 .footer {
-  padding-top: 5em;
-  text-align: center;
-  background-color: green;
+    padding-top: 5em;
+    text-align: center;
+    background-color: green;
 }
 
 .footer-a {
-  margin-right: 2em;
-  font-size: 2em;
-  color: rgb(7, 7, 7);
-  letter-spacing: 0.1em;
-  text-decoration-style: none;
-  padding-left: 1.5em;
-  border-left: 6px solid rgb(7, 7, 7);
+    margin-right: 2em;
+    font-size: 2em;
+    color: rgb(7, 7, 7);
+    letter-spacing: 0.1em;
+    text-decoration-style: none;
+    padding-left: 1.5em;
+    border-left: 6px solid rgb(7, 7, 7);
 }
 
 #copyright {
-  text-align: center;
-  color: rgb(7, 7, 7);
+    text-align: center;
+    color: rgb(7, 7, 7);
 }
 
 #guidelines {
-  border: none;
+    border: none;
+}
+
+.nothing {
+    text-align: center;
+    padding: 10%;
+}
+
+.center {
+    text-align: center;
 }
