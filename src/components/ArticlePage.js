@@ -43,7 +43,7 @@ const ArticlePage = ({ articleID }) => {
 
                 {!isLoading && 
                 <>
-                    {/* TODO replace with: <Article/> */}
+                    {/* TODO replace with: <Article {...singleArticle}/> */}
                     <h1>{singleArticle.title}</h1>
                     <h2>{singleArticle.author}</h2>
                 </>}
