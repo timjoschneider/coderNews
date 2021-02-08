@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Row, Col, Image, Button } from 'react-bootstrap';
 
 const NavBar = ({getSearchInput, search, fetchData}) => {
 
@@ -11,25 +11,31 @@ const NavBar = ({getSearchInput, search, fetchData}) => {
 
     return (
         <>
-        <div id="nav" className="row col-12">
-            <a href="index.html" className="col-2">
-                <img id="logo"  src={process.env.PUBLIC_URL + '/logo.png'} alt="Logo"/>
-            </a>
-            <div id="search" className="col-3">
-                <input
-                    value={search}
-                    onChange={getSearchInput}
-                    onKeyDown={_handleKeyDown}
-                    id="search-bar"
-                    className="col-11" 
-                    type="text" 
-                    placeholder="Search..."
-                    name="searchBar">
-                </input>
-                <button id="search-btn"><i id="search-icon" className="fas fa-search" onClick={() => fetchData(search)}></i></button>
-            </div>
-            <button type="button" id="login-btn" className="btn btn-primary col-1">Log in/Sign in</button>
-        </div>
+            <Row id="nav" className="col-12">
+                <Col className="col-2">
+                    <a href="index.html">
+                        <Image id="logo" src={process.env.PUBLIC_URL + '/logo.png'} rounded alt="Logo" />
+                    </a>
+                </Col>
+                <Col className="col-3">
+                    <div id="search">
+                        <input
+                            value={search}
+                            onChange={getSearchInput}
+                            onKeyDown={_handleKeyDown}
+                            id="search-bar"
+                            className="col-11" 
+                            type="text" 
+                            placeholder="Search..."
+                            name="searchBar">
+                        </input>
+                        <Button id="search-btn" variant="secondary" size="md" className="btn btn-primary col-1">
+                            <i id="search-icon" className="fas fa-search" onClick={() => fetchData(search)}></i>
+                        </Button>                  
+                    </div>
+                </Col>
+                <Button id="login-btn" variant="secondary" size="md" className="btn btn-primary col-1">Log in/Sign in</Button>
+            </Row>
         </>
     );
 }

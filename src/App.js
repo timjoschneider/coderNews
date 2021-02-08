@@ -38,7 +38,6 @@ function App() {
     }
   };
 
-
   const getSearchInput = ({target}) => {
     setSearch(target.value);
   }

@@ -75,13 +75,9 @@ a:hover {
     transition-delay: 0.2s;
 }
 
-a.title {
-    font-family: "Anton", sans-serif;
-    font-size: 1.5rem;
-}
-
-span.card-span {
+card-span {
     font-family: "Jost", sans-serif;
+    display: inline-block !important;
 }
 
 
@@ -116,11 +112,6 @@ span.card-span {
 
 .footer-a:hover {
     color: #ff6600;
-}
-
-.nothing {
-    text-align: center;
-    padding: 10%;
 }
 
 .center {
