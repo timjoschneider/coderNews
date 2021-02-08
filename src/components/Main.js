@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import MyCard from './MyCard';
-import Article from './Article';
 import ReactPaginate from 'react-paginate';
 import '../css/pagination.css';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
