@@ -46,7 +46,7 @@ code {
     color: white;
     background: #ff6600;
     height: 40px;
-    margin: -1.9rem;
+    margin: -2.35rem;
     border: 1px solid #ff6600;
     border-radius: 0 5px 5px 0;
     font-family: "Jost", sans-serif;
@@ -73,6 +73,11 @@ a:hover {
     text-decoration: none;
     color: #ff6600;
     transition-delay: 0.2s;
+}
+
+a.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
 }
 
 card-span {
