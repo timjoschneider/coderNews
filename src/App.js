@@ -41,6 +41,7 @@ function App() {
   };
 
   const getSearchInput = ({target}) => {
+    setArticleID();
     setSearch(target.value);
   }
 
