@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
-// TODO import ArticlePage from './ArticlePage';
+// TODO import Article from './Article';
 
 
-const Article = ({ articleID }) => {
+const ArticlePage = ({ articleID }) => {
 
     const [singleArticle, setSingleArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +43,7 @@ const Article = ({ articleID }) => {
 
                 {!isLoading && 
                 <>
-                    {/* TODO replace with: <ArticlePage /> */}
+                    {/* TODO replace with: <Article/> */}
                     <h1>{singleArticle.title}</h1>
                     <h2>{singleArticle.author}</h2>
                 </>}
@@ -52,4 +52,4 @@ const Article = ({ articleID }) => {
     );
 }
 
-export default Article;
+export default ArticlePage;

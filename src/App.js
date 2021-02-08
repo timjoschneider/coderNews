@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Article from './components/Article';
+import ArticlePage from './components/ArticlePage';
 
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <NavBar getSearchInput={getSearchInput} search={search} fetchData={fetchData}/>
-      {!articleID ? <Main data={data} setArticleID={setArticleID}/> : <Article articleID={articleID} />}
+      {!articleID ? <Main data={data} setArticleID={setArticleID}/> : <ArticlePage articleID={articleID} />}
       
       <Footer />
     </>
