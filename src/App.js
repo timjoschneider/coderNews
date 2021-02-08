@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import ArticlePage from './components/ArticlePage';
+
 
 function App() {
-  // --- API Data --- //
+
   const [data, setData ] = useState();
-  // --- Search --- //
   const [search, setSearch] = useState("");
+  const [articleID, setArticleID] = useState();
 
   useEffect(() => {
     fetchData();
@@ -39,13 +41,15 @@ function App() {
   };
 
   const getSearchInput = ({target}) => {
+    setArticleID();
     setSearch(target.value);
   }
 
   return (
     <>
       <NavBar getSearchInput={getSearchInput} search={search} fetchData={fetchData}/>
-      <Main data={data}/>
+      {!articleID ? <Main data={data} setArticleID={setArticleID}/> : <ArticlePage articleID={articleID} />}
+      
       <Footer />
     </>
   );

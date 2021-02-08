@@ -122,3 +122,13 @@ card-span {
 .center {
     text-align: center;
 }
+
+a.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+}
+
+title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+}

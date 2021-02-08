@@ -6,7 +6,7 @@ import '../css/pagination.css';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 
-const Main = ({data}) => {
+const Main = ({data, setArticleID }) => {
     //  --- PAGINATION --- //
     const [currentPage, setCurrentPage] = useState(0);
 
@@ -15,7 +15,7 @@ const Main = ({data}) => {
 
     const currentPageData = data && data // map over entries and insert cards (paginated)
         .slice(offset, offset + PER_PAGE)
-        .map((entry, i) => {return <MyCard key={entry.objectID} data={entry}/>});
+        .map((entry, i) => {return <MyCard key={entry.objectID} data={entry} setArticleID={setArticleID}/>});
 
     let pageCount = 0;
     if (data) {
