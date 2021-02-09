@@ -15,7 +15,7 @@ const MyCard = ({ data, setArticleID }) => {
                     {/* <button className="a-btn pr-5" onClick={() => {setArticleID(data.objectID)}} >{data.title}</button> */}
                     </Card.Subtitle>
                     <span className="card-span">{data.author}  </span> 
-                    <span className="card-span m-5">  {convertDate(data.created_at)} <i className="far fa-calendar-times"></i></span>
+                    <span className="card-span m-5">  {convertDate(data.created_at)} </span>
                     <span className="card-span m-5"> {convertTime(data.created_at)}  <i className="far fa-clock"></i></span>
                     <button className="btn btn-outline-dark card-span" onClick={() => {setArticleID(data.objectID)}} >{data.num_comments} Comments </button>
 
