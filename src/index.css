@@ -132,3 +132,19 @@ title {
     font-family: 'Anton', sans-serif;
     font-size: 1.5rem;
 }
+
+.a-btn {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.a-btn:hover {
+    color: #ff6600;
+}
+
+.right {
+    text-align: right;
+}
