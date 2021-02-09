@@ -18,7 +18,7 @@ function App() {
   fetchData.current = async (userInput) => {
     setIsLoading(true);
     setArticleID();
-    let url = `https://hn.algolia.com/api/v1/search_by_date?tags=front_page`;
+    let url = `https://hn.algolia.com/api/v1/search_by_date?tags=front_page&hitsPerPage=100`;
     if (userInput) {
       url = `https://hn.algolia.com/api/v1/search_by_date?query=${search}&tags=story`;
     }
