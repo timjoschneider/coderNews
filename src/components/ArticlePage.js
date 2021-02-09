@@ -1,34 +1,30 @@
 import React, { useState, useEffect} from 'react';
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 
-// TODO import Article from './Article';
+import Article from './Article';
 
 
 const ArticlePage = ({ articleID }) => {
 
     const [singleArticle, setSingleArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [isError, setIsError] = useState();
 
     useEffect(() => {
         const fetchArticle = async () => {
-          setIsError(false);
           setIsLoading(true);
           const url = `https://hn.algolia.com/api/v1/items/${articleID}`
           try {
             const response = await fetch(url);
             const jsonRes = await response.json();
-            console.log(jsonRes);
             setIsLoading(false);
             setSingleArticle({...jsonRes});
           } catch (error) {
             setIsLoading(false);
-            setIsError(true);
             console.log(error.message);
           }
         };
         fetchArticle();
-      }, []);
+      }, [articleID]);
 
 
     return (
@@ -43,9 +39,7 @@ const ArticlePage = ({ articleID }) => {
 
                 {!isLoading && 
                 <>
-                    {/* TODO replace with: <Article {...singleArticle}/> */}
-                    <h1>{singleArticle.title}</h1>
-                    <h2>{singleArticle.author}</h2>
+                    <Article {...singleArticle} />
                 </>}
             </Row>
         </Container>
