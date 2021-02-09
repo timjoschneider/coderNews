@@ -86,6 +86,13 @@ card-span {
     display: inline-block !important;
 }
 
+button.btn.btn-outline-dark {
+    padding: 0.3rem;
+    border-radius: 10px;
+    margin-left: 3rem;
+
+}
+
 /* article */
 
 h4 {
