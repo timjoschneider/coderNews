@@ -89,9 +89,9 @@ card-span {
 button.btn.btn-outline-dark {
     padding: 0.3rem;
     border-radius: 10px;
-    margin-left: 3rem;
-
+    /* margin-left: 3rem; */
 }
+
 
 /* article */
 
@@ -104,6 +104,7 @@ p {
     font-family: "Jost", sans-serif;
     font-size: 1.15rem;
 }
+
 
 /* footer */
 
