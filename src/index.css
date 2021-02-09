@@ -67,6 +67,7 @@ code {
 a {
     text-decoration: none;
     color: black;
+    font-size: 1.2rem;
 }
 
 a:hover {
@@ -85,6 +86,17 @@ card-span {
     display: inline-block !important;
 }
 
+/* article */
+
+h4 {
+    font-family: "Jost", sans-serif;
+    padding-bottom: 1.5rem;
+}
+
+p {
+    font-family: "Jost", sans-serif;
+    font-size: 1.15rem;
+}
 
 /* footer */
 
