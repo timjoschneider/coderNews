@@ -15,9 +15,9 @@ function App() {
 
   fetchData.current = async (userInput) => {
     setArticleID();
-    let url = `https://hn.algolia.com/api/v1/search?tags=front_page&tags=story`;
+    let url = `https://hn.algolia.com/api/v1/search_by_date?tags=front_page`;
     if (userInput) {
-      url = `https://hn.algolia.com/api/v1/search?query=${search}&tags=story`;
+      url = `https://hn.algolia.com/api/v1/search_by_date?query=${search}&tags=story`;
     }
     try {
       const response = await fetch(url);
