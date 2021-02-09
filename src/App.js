@@ -4,6 +4,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import MySpinner from './components/MySpinner';
 import ArticlePage from './components/ArticlePage';
+import ErrorMsg from './components/ErrorMsg';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [search, setSearch] = useState("");
   const [articleID, setArticleID] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchData = useRef(() => {})
 
@@ -27,7 +29,9 @@ function App() {
       if (response.ok) {
         const res = await response.json();
         setIsLoading(false);
+        res.hits.length === 0 ? setError(true) : setError(false)
         res && setData(res.hits);
+        
       } else {
         throw new Error("Request failed!");
       }
@@ -55,7 +59,7 @@ function App() {
     <>
       <NavBar getSearchInput={getSearchInput} search={search} fetchData={fetchData.current}/>
       {!articleID ? 
-          !isLoading ? <Main data={data} setArticleID={setArticleID}/>: <MySpinner />
+          !isLoading ? error ? <ErrorMsg /> : <Main data={data} setArticleID={setArticleID}/>: <MySpinner />
           : <ArticlePage articleID={articleID}/>}
       
       <Footer />
