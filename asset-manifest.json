@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/coderNews/static/css/main.b98ddd46.chunk.css",
+    "main.js": "/coderNews/static/js/main.24ac7180.chunk.js",
+    "main.js.map": "/coderNews/static/js/main.24ac7180.chunk.js.map",
+    "runtime-main.js": "/coderNews/static/js/runtime-main.22a23adc.js",
+    "runtime-main.js.map": "/coderNews/static/js/runtime-main.22a23adc.js.map",
+    "static/js/2.61fd6387.chunk.js": "/coderNews/static/js/2.61fd6387.chunk.js",
+    "static/js/2.61fd6387.chunk.js.map": "/coderNews/static/js/2.61fd6387.chunk.js.map",
+    "index.html": "/coderNews/index.html",
+    "static/css/main.b98ddd46.chunk.css.map": "/coderNews/static/css/main.b98ddd46.chunk.css.map",
+    "static/js/2.61fd6387.chunk.js.LICENSE.txt": "/coderNews/static/js/2.61fd6387.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.22a23adc.js",
+    "static/js/2.61fd6387.chunk.js",
+    "static/css/main.b98ddd46.chunk.css",
+    "static/js/main.24ac7180.chunk.js"
+  ]
+}
